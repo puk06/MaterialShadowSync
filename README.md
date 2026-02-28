@@ -1,12 +1,10 @@
-# Texture Replacer
+# Material Shadow Sync
 
-Non-destructive texture replacement for VRChat Avatars.
+A tool for non-destructively synchronizing a material's shader shadow settings with other materials.
 
 # Component
 
-- `Puko Texture Replacer`- A component that replaces all textures in an avatar when you specify the source and destination textures.
-  - `Source Texture` - The texture you want to replace.
-  - `Destination Texture` - The texture you want to use as a replacement.
+- `Material Shadow Sync`- Component for managing settings of synchronized materials
 
 ### 📄 License
 
