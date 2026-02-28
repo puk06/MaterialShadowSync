@@ -70,7 +70,7 @@ namespace net.puk06.ShadowSyncer.Editor.Ndmf
             try
             {
                 MaterialShadowSync[] components = group.GetData<MaterialShadowSync[]>();
-                foreach (MaterialShadowSync component in components) context.Observe(component.SourceMaterial);
+                foreach (MaterialShadowSync component in components) context.Observe(component);
 
                 IEnumerable<MaterialShadowSync> enabledParentComponents = components.Where(i => context.ActiveInHierarchy(i.gameObject) && i.IsEnabled && i.IsPreviewEnabled);
 
