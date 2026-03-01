@@ -14,7 +14,7 @@ namespace net.puk06.ShadowSyncer.Editor.Ndmf
     {
         public ImmutableList<RenderGroup> GetTargetGroups(ComputeContext context)
         {
-            ImmutableList<GameObject> avatarGameObjects = context.GetAvatarRoots();
+            IEnumerable<GameObject> avatarGameObjects = context.GetAvatarRoots().Distinct();
 
             List<RenderGroup> targetRenderGroups = new();
 
