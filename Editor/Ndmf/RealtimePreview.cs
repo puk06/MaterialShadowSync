@@ -5,6 +5,7 @@ using System.Collections.Immutable;
 using System.Linq;
 using System.Threading.Tasks;
 using nadena.dev.ndmf.preview;
+using net.puk06.ShadowSyncer.Editor.Utils;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -70,7 +71,14 @@ namespace net.puk06.ShadowSyncer.Editor.Ndmf
             try
             {
                 MaterialShadowSync[] components = group.GetData<MaterialShadowSync[]>();
-                foreach (MaterialShadowSync component in components) context.Observe(component);
+                foreach (MaterialShadowSync component in components)
+                {
+                    context.Observe(component);
+                    if (component.SourceMaterial != null)
+                    {
+                        context.Observe(component, c => new Material(c.SourceMaterial), (a, b) => ShaderPropertyUtils.CalculateShadowPropertyHash(a) == ShaderPropertyUtils.CalculateShadowPropertyHash(b));
+                    }
+                }
 
                 IEnumerable<MaterialShadowSync> enabledParentComponents = components.Where(i => context.ActiveInHierarchy(i.gameObject) && i.IsEnabled && i.IsPreviewEnabled);
 
