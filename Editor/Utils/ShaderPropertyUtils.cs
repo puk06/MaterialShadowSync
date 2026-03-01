@@ -1,6 +1,4 @@
 using System.Linq;
-using System.Runtime.CompilerServices;
-using UnityEngine;
 
 namespace net.puk06.ShadowSyncer.Editor.Utils
 {
