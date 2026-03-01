@@ -67,7 +67,6 @@ namespace net.puk06.ShadowSyncer.Editor.Utils
             "_ShadowColorType",
             "_ShadowColor",
             "_ShadowColorTex",
-            "_ShadowColorTex",
             "_ShadowNormalStrength",
             "_ShadowBorder",
             "_ShadowBlur",
