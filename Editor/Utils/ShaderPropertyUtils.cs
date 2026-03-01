@@ -49,8 +49,8 @@ namespace net.puk06.ShadowSyncer.Editor.Utils
                         _ShadowFlatBlur             ("sBlur", Range(0.001, 2)) = 1
         */
 
-        internal static string[] LILTOON_SHADOW_SETTINGS_KEYS = new string[] {
-        
+        internal static string[] LILTOON_SHADOW_SETTINGS_KEYS = new string[]
+        {
             "_UseShadow",
             "_ShadowStrength",
             "_ShadowStrengthMask",
