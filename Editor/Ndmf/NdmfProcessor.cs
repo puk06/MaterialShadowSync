@@ -23,22 +23,23 @@ namespace net.puk06.ShadowSyncer.Editor.Ndmf
                 if (originalMaterial == null)
                 {
                     newMaterials[i] = Object.Instantiate(materials[i]);
-                    continue;
                 }
-
-                bool processed = false;
-
-                foreach (MaterialShadowSync component in components)
+                else
                 {
-                    if (component.TargetMaterials.Contains(originalMaterial))
-                    {
-                        newMaterials[i] = GetProcessedMaterial(component.SourceMaterial, materials[i], component.IncludeTexture);
-                        processed = true;
-                        break;
-                    }
-                }
+                    bool processed = false;
 
-                if (!processed) newMaterials[i] = Object.Instantiate(materials[i]);
+                    foreach (MaterialShadowSync component in components)
+                    {
+                        if (component.TargetMaterials.Contains(originalMaterial))
+                        {
+                            newMaterials[i] = GetProcessedMaterial(component.SourceMaterial, materials[i], component.IncludeTexture);
+                            processed = true;
+                            break;
+                        }
+                    }
+
+                    if (!processed) newMaterials[i] = Object.Instantiate(materials[i]);
+                }
 
                 ObjectRegistry.RegisterReplacedObject(materials[i], newMaterials[i]);
             }
