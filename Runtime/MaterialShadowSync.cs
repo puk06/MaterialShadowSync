@@ -50,7 +50,7 @@ namespace net.puk06.ShadowSyncer
                         _ShadowFlatBlur             ("sBlur", Range(0.001, 2)) = 1
         */
 
-        public override string[] TargetPropertyNames => new string[]
+        private static readonly string[] _shadowPropertyNames = new string[]
         {
             "_UseShadow",
             "_ShadowStrength",
@@ -72,7 +72,7 @@ namespace net.puk06.ShadowSyncer
             "_ShadowReceive",
             "_Shadow2ndColor",
             "_Shadow2ndColorTex",
-            "_Shadow2rdNormalStrength",
+            "_Shadow2ndNormalStrength",
             "_Shadow2ndBorder",
             "_Shadow2ndBlur",
             "_Shadow2ndReceive",
@@ -90,5 +90,7 @@ namespace net.puk06.ShadowSyncer
             "_ShadowFlatBorder",
             "_ShadowFlatBlur"
         };
+
+        public override string[] TargetPropertyNames => _shadowPropertyNames;
     }
 }
